@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ <section class="patient-area section-padding">
+        <div class="container">
+            <div class="row">
+      <div class="col-lg-9 offset-lg-1 align-self-center">
+                    <div class="appointment-form text-center mt-5 mt-lg-0">
+                        <h3 class="mb-5">Disease Prediction</h3>
+                        <form action="/result" method="POST">
+                            {% csrf_token %}
+<ul>
+    <li>
+                            <div class="form-group">
+                                <input id="text" type="text" name="Symptom1" placeholder="Enter Your Symptom1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Your Symptom1'" required>
+                            </div>
+                              <div class="form-group">
+
+                                <input id="text" type="text" name="Symptom2" placeholder="Enter Your Symptom2" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Your Symptom2'" >
+                            </div>
+</ul>
+                              <div class="form-group">
+                                <input  id="text" type="text" name="Symptom3" placeholder="Enter Your Symptom3" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Your Symptom3'" >
+                            </div>
+  <div class="form-group">
+                                <input id="text" type="text" name="Symptom4" placeholder="Enter Your Symptom4" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Your Symptom4'" >
+                            </div>
+  <div class="form-group">
+      <input type="text" id="text" name="Symptom5" placeholder="Enter Your Symptom5" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Your Symptom5'" >
+                            </div>
+
+
+
+<button type="submit" value="submit"><a type="submit">Submit</a></button>
+                            <div class="form-group">
+                                <br>
+                                 <h3 class="mb-5">Suspected Diseases: {{ result }}</h3>
+                                 <h3 class="mb-5">Suggested Doctor: {{ doctor }}</h3>
+</div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+{% endblock %}

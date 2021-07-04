@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <style>
+      ul{
+list-style-type:none;
+}
+  </style>
+  </head>
+  <body>
+   
+    <!------ Include the above in your HEAD tag ---------->
+    
+                <div class="container">    
+                      <div class="row">
+                          <div class="panel panel-default">
+                          <div class="panel-heading">  <h4 >User Profile</h4></div>
+                          <ul>
+                          <li><a href="{% url 'home' %}">Back To Home Page</a></li>
+                        </ul>
+                           <div class="panel-body">
+                          <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+                           <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive"> 
+                         
+                     
+                          </div>
+                          {% if user.is_authenticated %}
+                          <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
+                              <div class="container" >
+                                <h2>{{ request.user }}</h2>
+                                <br>
+                                <p>  <b>Patient Details</Details></b></p>
+                                {% endif %}
+                               
+                              </div>
+                               <hr>
+                              <ul class="container details" >
+                                {% for user in stu %}
+                               <label>Username</label>
+                                <li><p><span style="width:50px;"></span>{{ user.username }}</p></li>
+                                <label>Email</Address></label>
+                                <li><p><span style="width:50px;"></span>{{user.email}}</p></li>
+                                {% endfor %}
+
+                                {% for user in stud %}
+                                <label>age</label>
+                                 <li><p><span style="width:50px;"></span>{{ user.age}}</p></li>
+                                 <label>Dob</Address></label>
+                                 <li><p><span style="width:50px;"></span>{{user.dob}}</p></li>
+                                 <label>Address</Address></label>
+                                 <li><p><span style="width:50px;"></span>{{user.address}}</p></li>
+                                 {% endfor %}
+                                 <button type="button"><a href="{% url 'edit' %}">Update Profile</a></button>
+                              </ul>
+                              <hr>
+                              <div class="col-sm-5 col-xs-6 tital " >
+                                <p>  <b>Patient Medical History</Details></b></p>
+                                <hr>
+                                <ul class="container details" >
+                                  {% for user in stude %}
+                                    <label>symptom 1</label>
+                                     <li><p><span style="width:50px;"></span>{{user.Symptom1}}</p></li>
+                                     <label>symptom 2</Address></label>
+                                     <li><p><span style="width:50px;"></span>{{user.Symptom2}}</p></li>
+                                     <label>symptom 3</Address></label>
+                                     <li><p><span style="width:50px;"></span>{{user.Symptom3}}</p></li>
+                                     <label>symptom 4</Address></label>
+                                     <li><p><span style="width:50px;"></span>{{user.Symptom4}}</p></li>
+                                     <label>symptom 5</Address></label>
+                                     <li><p><span style="width:50px;"></span>{{user.Symptom5}}</p></li>
+                                     <label>Suspected Diseases</Address></label>
+                                     <li><p><span style="width:50px;"></span>{{user.suspected_Diseases}}</p></li>
+                                     <label>Suggested Doctor</Address></label>
+                                     <li><p><span style="width:50px;"></span>{{user.suggested_doctor}}</p></li>
+                                     {% endfor %}
+                                     
+                                   </ul>
+                                  
+                               </div>
+                          </div>
+                    </div>
+                </div>
+                </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

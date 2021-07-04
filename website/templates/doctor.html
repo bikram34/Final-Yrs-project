@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+    <section class="specialist-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-top text-center">
+                        
+                    </div>
+                </div>
+            </div>
+          
+                
+            <h3><strong>Our Doctor</strong></h3>
+                <br>
+                
+                <table>
+                  <tr>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Detail</th>
+                    <th>Contact Number</th>
+                  </tr>
+                  <tr>
+                    {% for doc in stu %}
+                    <td>{{doc.Doctor_name}}</td>
+                    <td>{{doc.Department}}</td>
+                    <td>{{doc.Detail}}</td>
+                    <td>{{doc.number}}</td>
+                  </tr>
+                  {% endfor %}
+                </table>    
+        </div>
+    </section>
+{% endblock %}

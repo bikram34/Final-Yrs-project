@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+     <section class="patient-area section-padding">
+        <div class="container">
+            <div class="row">
+      <div class="col-lg-9 offset-lg-1 align-self-center">
+                    <div class="appointment-form text-center mt-5 mt-lg-0">
+                        <h3 class="mb-5">Registration</h3>
+                        <form action="/signup" method="POST">
+ {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" name="username" placeholder="Enter Your Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Your Username'" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Enter Your Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Your Email'" required>
+                            </div>
+                             <div class="form-group">
+                                <input type="address" name="address" placeholder="Enter Your Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Your Address'" required>
+                            </div>
+                             <div class="form-group">
+                                <input type="age" name="age" placeholder="Enter Your Age" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Your Age'" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="dob" name="from-datepicker"  placeholder="Enter Your Date Of Birth" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Your Date of Birth'" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Your Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Your Password'"  required>
+                            </div>
+<button type="submit" name="button"><a type="submit">Submit</a></button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+{% endblock %}

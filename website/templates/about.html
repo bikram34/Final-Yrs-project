@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+       <section class="welcome-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 align-self-center">
+                    <div class="welcome-img">
+                        <img src="{% static 'website/assets/images/banner.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="welcome-text mt-5 mt-lg-0">
+                    
+                        <h2>About Our System</h2>
+                        <p class="pt-3">It might have happened so many times that you or your closed ones need doctors help immediately, but they are not available due to some reasons.</p>
+                        <p>Here we propose a system that allows users to get instant guidance on their health issues through an intelligent health care system online. The system is fed with various symptoms and the disease/illness associated with those systems.</p>
+                        <p>This health prediction system allows users to share their symptoms and issues. It then processes user’s symptoms to check for various illness that could be associated with it. Here we use intelligent system of Naïve Bayes algorithm and depending on the symptoms will predict the diseases.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

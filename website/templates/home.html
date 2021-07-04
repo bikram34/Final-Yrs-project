@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <section class="banner-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <h4>Caring for better life</h4>
+                    <h1>Health Prediction</h1>
+                    <p>We will help you to guess your diseases according to your symptoms for that you need to login on our system.</p>
+                    <a href="{% url 'register' %}" class="template-btn mt-3">Create Account</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
